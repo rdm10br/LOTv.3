@@ -35,4 +35,5 @@
     <string name="hint_phone">Phone Number</string>
     <string name="buttonSignUp">Sign Up</string>
     <string name="sendBT">send</string>
+    <string name="menu_chat">Chat Global</string>
 </resources>
