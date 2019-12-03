@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "887127799535",
+    "firebase_url": "https://league-of-therapy-v3.firebaseio.com",
+    "project_id": "league-of-therapy-v3",
+    "storage_bucket": "league-of-therapy-v3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887127799535:android:8541d5829c7f14d66c4d1a",
+        "android_client_info": {
+          "package_name": "com.example.lotv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887127799535-a7no88qs72ssr7bd3c6ar3cgere5vh09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV0zbWwvPrBIb-dEj1Zs2ZDfdR2KGpneA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887127799535-a7no88qs72ssr7bd3c6ar3cgere5vh09.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

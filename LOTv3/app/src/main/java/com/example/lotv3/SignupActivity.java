@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication22.R;
+import com.example.lotv3.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
