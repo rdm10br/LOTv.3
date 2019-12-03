@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,14 +32,14 @@ public class ChatActivity extends AppCompatActivity
     }
     public void onSend(View view)
     {
-        TextView msgEdt = findViewById(R.id.messageET);
+        EditText msgEdt = findViewById(R.id.messageET);
         String Msg= msgEdt.toString();
         if(!TextUtils.isEmpty(Msg)){
             Mensagem msg= new Mensagem(Uid,Msg);
             DB.collection("Mensagens").document(Userid.getUid()).set(msg);
+            alert("teste 2");
             }
         alert("teste 1");
-        alert("teste 2");
     }
 
 
