@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lotv3.util.Users;
+import com.example.lotv3.util.Mensagem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,10 +30,11 @@ public class ChatActivity extends AppCompatActivity
     }
     public void onSend(View view)
     {
-        TextView msgEdt = findViewById(R.id.);
-        String msg= msgEdt.toString();
-        if(!TextUtils.isEmpty(msg)){
-            
+        TextView msgEdt = findViewById(R.id.messageET);
+        String Msg= msgEdt.toString();
+        if(!TextUtils.isEmpty(Msg)){
+            Mensagem msg= new Mensagem(Userid.toString(),Msg);
+            DB.collection("Mensagens").document(Userid.toString()).set(msg);
             }
         alert("teste 1");
         alert("teste 2");
