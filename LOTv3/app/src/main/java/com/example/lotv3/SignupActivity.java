@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.example.lotv3.R;
+import com.example.lotv3.util.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +24,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mauth = FirebaseAuth.getInstance();
+    private String User = mauth.getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +82,9 @@ public class SignupActivity extends AppCompatActivity {
     {
 
         TextView name = findViewById(R.id.nameET);
-        String Nome = name.getText().toString();
+        final String Nome = name.getText().toString();
         TextView number = findViewById(R.id.numberET);
-        String Numero = number.getText().toString();
+        final String Numero = number.getText().toString();
         TextView email = findViewById(R.id.emailET2);
         final String Email = email.getText().toString();
         TextView password = findViewById(R.id.passwordET2);
@@ -96,6 +98,8 @@ public class SignupActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                Usuario usuario = new Usuario(Nome,Email,Numero);
+                                db.collection("usuarios").document(mauth.getUid()).set(usuario);
                                 FirebaseUser user = mauth.getCurrentUser();
                                 alert("cadastro realizado com sucesso");
                                 UpdateUi(user);

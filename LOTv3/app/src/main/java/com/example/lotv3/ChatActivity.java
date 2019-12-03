@@ -18,6 +18,7 @@ public class ChatActivity extends AppCompatActivity
 {
 
     private FirebaseUser Userid = FirebaseAuth.getInstance().getCurrentUser();
+    String Uid = Userid.getUid();
     private FirebaseFirestore DB = FirebaseFirestore.getInstance();
 
 
@@ -33,8 +34,8 @@ public class ChatActivity extends AppCompatActivity
         TextView msgEdt = findViewById(R.id.messageET);
         String Msg= msgEdt.toString();
         if(!TextUtils.isEmpty(Msg)){
-            Mensagem msg= new Mensagem(Userid.toString(),Msg);
-            DB.collection("Mensagens").document(Userid.toString()).set(msg);
+            Mensagem msg= new Mensagem(Uid,Msg);
+            DB.collection("Mensagens").document(Userid.getUid()).set(msg);
             }
         alert("teste 1");
         alert("teste 2");
