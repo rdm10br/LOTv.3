@@ -68,3 +68,5 @@ public class SignupActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 }
+
+//teste
