@@ -96,8 +96,9 @@ public class SignupActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                FirebaseUser user = mauth.getCurrentUser();
                                 alert("cadastro realizado com sucesso");
-                                //UpdateUi();
+                                UpdateUi(user);
                             }
                             else {
                                 alert("erro no cadastro");
