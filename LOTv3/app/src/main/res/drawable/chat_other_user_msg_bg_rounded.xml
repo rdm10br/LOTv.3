@@ -3,7 +3,7 @@
     android:shape="rectangle"
     android:padding="@dimen/grid_13">
 
-    <solid android:color="@color/transparent_white"/>
+    <solid android:color="@color/transparent_grey"/>
     <corners android:radius="@dimen/grid_10"/>
 
 </shape>
