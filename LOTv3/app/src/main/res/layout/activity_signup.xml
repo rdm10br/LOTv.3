@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lotv3.SignupActivity">
+    tools:context=".SignupActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -112,7 +112,7 @@
 
 
             <Button
-                android:id="@+id/buttonLogin"
+                android:id="@+id/buttonSignUp"
                 style="@style/StandardButton"
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"

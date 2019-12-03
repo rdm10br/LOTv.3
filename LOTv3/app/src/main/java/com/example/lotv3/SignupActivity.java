@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+//import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lotv3.R;
+//import com.example.lotv3.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -76,26 +76,35 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    private void onSignUp(View view) {
+    public void onSignUp(View view)
+    {
 
+        TextView name = findViewById(R.id.nameET);
+        String Nome = name.getText().toString();
+        TextView number = findViewById(R.id.numberET);
+        String Numero = number.getText().toString();
+        TextView email = findViewById(R.id.emailET2);
+        final String Email = email.getText().toString();
+        TextView password = findViewById(R.id.passwordET2);
+        final String Password = password.getText().toString();
 
-        if (ValidateForm()) {
-
-
-            /*mauth.createUserWithEmailAndPassword(user, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        if (ValidateForm())
+        {
+            mauth.createUserWithEmailAndPassword(Email,Password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
+                    {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 alert("cadastro realizado com sucesso");
-                                UpdateUi(user);
+                                //UpdateUi();
                             }
                             else {
                                 alert("erro no cadastro");
 
                             }
                         }
-                    }); */
+                    });
 
 
         }
