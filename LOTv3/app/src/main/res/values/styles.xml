@@ -48,6 +48,14 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/standard_text_size</item>
         <item name="android:background">@drawable/send_button_rounded</item>
+        <!--<item name="android:icon">@drawable/ic_menu_send</item>-->
     </style>
+
+    <style name="chatBuble">
+        <item name="android:textSize">@dimen/standard_chat_text_size</item>
+        <item name="android:minHeight">@dimen/grid_7</item>
+        <item name="android:maxHeight">@dimen/grid_12</item>
+    </style>
+
 
 </resources>

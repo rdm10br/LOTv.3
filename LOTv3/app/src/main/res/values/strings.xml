@@ -36,4 +36,5 @@
     <string name="buttonSignUp">Sign Up</string>
     <string name="sendBT">send</string>
     <string name="menu_chat">Chat Global</string>
+    <string name="hint_message">Message</string>
 </resources>

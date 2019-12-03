@@ -60,6 +60,7 @@
         android:layout_height="@dimen/grid_8"
         android:onClick="onSend"
         android:text="@string/sendBT"
+        android:soundEffectsEnabled="true"
         android:layout_margin="@dimen/grid_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -73,6 +74,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chatRV"
         android:layout_marginStart="@dimen/grid_2"
+        android:layout_margin="@dimen/grid_1"
+        android:minHeight="@dimen/grid_8"
+        android:maxHeight="@dimen/grid_11"
+        android:padding="@dimen/grid_1"
+        android:gravity="center_vertical"
+        android:hint="@string/hint_message"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
