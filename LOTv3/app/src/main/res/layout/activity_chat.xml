@@ -44,10 +44,11 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRV"
         android:layout_width="match_parent"
         android:layout_height="@dimen/grid_0"
         android:layout_marginTop="@dimen/grid_2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/messageET"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/navigation_layout"/>
@@ -59,7 +60,19 @@
         android:layout_height="@dimen/grid_8"
         android:onClick="onSend"
         android:text="@string/sendBT"
+        android:layout_margin="@dimen/grid_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/messageET"
+        android:layout_width="@dimen/grid_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sendMsgBT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatRV"
+        android:layout_marginStart="@dimen/grid_2"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
