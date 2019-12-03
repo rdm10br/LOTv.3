@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,15 +32,57 @@ public class SignupActivity extends AppCompatActivity {
 
     private boolean ValidateForm() {
 
+        TextView name = findViewById(R.id.nameET);
+        String Nome = name.getText().toString();
+        TextView number = findViewById(R.id.numberET);
+        String Numero = number.getText().toString();
+        TextView email = findViewById(R.id.emailET2);
+        String Email = email.getText().toString();
+        TextView password = findViewById(R.id.passwordET2);
+        String Password = password.getText().toString();
+        boolean valid = true;
 
+        if (TextUtils.isEmpty(Nome)){
+            name.setError("required");
+            valid =false;
+        }else{
+            name.setError(null);
+        }
+
+
+        if (TextUtils.isEmpty(Numero)){
+            number.setError("required");
+            valid =false;
+        }else{
+            name.setError(null);
+        }
+
+
+        if (TextUtils.isEmpty(Email)){
+            email.setError("required");
+            valid =false;
+        }else{
+            name.setError(null);
+        }
+
+        if (TextUtils.isEmpty(Password)){
+            password.setError("required");
+            valid =false;
+        }else{
+            name.setError(null);
+        }
+
+        return valid;
 
     }
 
-    private void onSignup() {
+    private void onSignUp(View view) {
 
 
         if (ValidateForm()) {
-            mauth.createUserWithEmailAndPassword(user, password)
+
+
+            /*mauth.createUserWithEmailAndPassword(user, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -52,9 +95,9 @@ public class SignupActivity extends AppCompatActivity {
 
                             }
                         }
-                    }); {
+                    }); */
 
-            }
+
         }
     }
     private void UpdateUi(FirebaseUser username){

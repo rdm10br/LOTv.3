@@ -123,6 +123,7 @@
                 android:layout_marginRight="@dimen/grid_3"
                 android:layout_marginBottom="@dimen/grid_3"
                 android:text="@string/buttonSignUp"
+                android:onClick="onSignUp"
                 />
 
         </RelativeLayout>
