@@ -36,6 +36,7 @@ public class ChatActivity extends AppCompatActivity
         if(!TextUtils.isEmpty(Msg)){
             Mensagem msg= new Mensagem(Uid,Msg);
             DB.collection("Mensagens").document(Userid.getUid()).set(msg);
+            msgEdt.setText("",TextView.BufferType.EDITABLE);
             }
         alert("teste 1");
         alert("teste 2");
