@@ -20,9 +20,42 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/chatCV"
             android:layout_width="@dimen/standard_height"
-            android:layout_height="@dimen/standard_height">
-
+            android:layout_height="@dimen/standard_height"
+            app:cardCornerRadius="@dimen/grid_6">
+            <ImageView
+                android:id="@+id/topPicIV"
+                android:layout_width="@dimen/standard_height"
+                android:layout_height="@dimen/standard_height"
+                android:layout_marginRight="@dimen/grid_1"
+                android:scaleType="center">
+            </ImageView>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/topNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            style="@style/text"
+            android:paddingLeft="@dimen/grid_1"
+            />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_0"
+        app:layout_constraintTop_toBottomOf="@id/navigation_layout"
+        android:layout_marginTop="@dimen/grid_2"
+        android:layout_marginBottom="@dimen/grid_2"
+        >
+        <Button
+            android:id="@+id/sendMsgBT"
+            android:layout_width="@dimen/grid_9"
+            android:layout_height="@dimen/grid_8"
+            android:text="@string/sendBT"
+            style="@style/Send_Button"
+            android:onClick="onSend"
+            />
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

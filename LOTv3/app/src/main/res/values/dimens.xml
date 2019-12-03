@@ -15,4 +15,10 @@
     <dimen name="standard_height">50dp</dimen>
     <dimen name="grid_0">0dp</dimen>
     <dimen name="standard_text_size">20sp</dimen>
+    <dimen name="grid_6">25dp</dimen>
+    <dimen name="grid_7">50dp</dimen>
+    <dimen name="grid_8">75dp</dimen>
+    <dimen name="grid_9">100dp</dimen>
+    <dimen name="grid_10">5dp</dimen>
+    <dimen name="sendBT_padding">10dp</dimen>
 </resources>
