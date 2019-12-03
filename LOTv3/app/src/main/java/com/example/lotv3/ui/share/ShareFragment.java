@@ -10,13 +10,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.lotv3.ChatActivity;
 import com.example.lotv3.R;
 
 public class ShareFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    /*private ShareViewModel shareViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,5 +33,13 @@ public class ShareFragment extends Fragment {
             }
         });
         return root;
-    }
+    }*/
+
+    /*private ChatActivity chat;
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState)
+    {
+        chat = ViewModelProviders.of(this).get(ChatActivity.class);
+        return root;
+    }*/
 }
