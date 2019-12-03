@@ -1,10 +1,14 @@
 package com.example.lotv3;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myapplication22.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -13,6 +17,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -23,6 +28,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth mauth = FirebaseAuth.getInstance();
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -60,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void Logout(MenuItem menuItem){
+        mauth.signOut();
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -67,5 +80,3 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 }
-//Rafael
-//edwin
