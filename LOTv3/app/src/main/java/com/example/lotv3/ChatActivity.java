@@ -2,11 +2,14 @@ package com.example.lotv3;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +33,12 @@ import java.util.List;
 public class ChatActivity extends AppCompatActivity
 {
 
-    private List<Mensagem>mChat;
+    List<Mensagem>mChat;
     private FirebaseUser Userid = FirebaseAuth.getInstance().getCurrentUser();
     String Uid = Userid.getUid();
     private FirebaseFirestore DB = FirebaseFirestore.getInstance();
-
+    ChatAdapter chatAdapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,7 +46,11 @@ public class ChatActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-
+        recyclerView = findViewById(R.id.chatRV);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        /*LinearLayoutManager.setStackFrontEnd(true);*/
+        recyclerView.setLayoutManager(linearLayoutManager);
     }
 
     private void readMessage(){
@@ -57,7 +65,7 @@ public class ChatActivity extends AppCompatActivity
                     return;
                 }
                 if (documentSnapshot !=null && documentSnapshot.exists()){
-                    mChat
+                    mChat.clear();
                 }
             }
         });
