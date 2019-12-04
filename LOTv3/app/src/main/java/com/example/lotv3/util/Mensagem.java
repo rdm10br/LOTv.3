@@ -4,7 +4,8 @@ public class Mensagem {
     private String Usuario;
     private String msg;
 
-    public Mensagem(){}
+    public Mensagem(){
+    }
 
     public Mensagem(String Usuario,String msg){
         this.Usuario= Usuario;
