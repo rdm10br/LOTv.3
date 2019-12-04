@@ -18,9 +18,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignupActivity extends AppCompatActivity {
+
+    private DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mauth = FirebaseAuth.getInstance();
@@ -30,6 +36,9 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        reference = FirebaseDatabase.getInstance().getReference("Usuarios");
+        /*reference.addValueEventListener(new ValueEventListener()*/
     }
 
     private boolean ValidateForm() {
@@ -81,6 +90,7 @@ public class SignupActivity extends AppCompatActivity {
     public void onSignUp(View view)
     {
 
+
         TextView name = findViewById(R.id.nameET);
         final String Nome = name.getText().toString();
         TextView number = findViewById(R.id.numberET);
@@ -99,7 +109,8 @@ public class SignupActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Usuario usuario = new Usuario(Nome,Email,Numero);
-                                db.collection("usuarios").document(mauth.getUid()).set(usuario);
+                                /*db.collection("usuarios").document(mauth.getUid()).set(usuario);*/
+                                reference.child("Usuarios").child(mauth.getUid()).setValue(usuario);
                                 FirebaseUser user = mauth.getCurrentUser();
                                 alert("cadastro realizado com sucesso");
                                 UpdateUi(user);

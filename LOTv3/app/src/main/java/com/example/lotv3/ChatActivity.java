@@ -63,7 +63,6 @@ public class ChatActivity extends AppCompatActivity
 
 
         reference = FirebaseDatabase.getInstance().getReference("Usuarios");
-
         reference.addValueEventListener(new ValueEventListener()
         {
             @Override
