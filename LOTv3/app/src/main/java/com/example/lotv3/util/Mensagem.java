@@ -1,6 +1,7 @@
 package com.example.lotv3.util;
 
 public class Mensagem {
+    private String sender;
     private String Usuario;
     private String msg;
 
@@ -16,5 +17,8 @@ public class Mensagem {
     }
     public String getMsg(){
         return msg;
+    }
+    public String getSender() {
+        return sender;
     }
 }
