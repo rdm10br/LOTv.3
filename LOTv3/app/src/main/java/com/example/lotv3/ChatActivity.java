@@ -58,7 +58,7 @@ public class ChatActivity extends AppCompatActivity
         recyclerView = findViewById(R.id.chatRV);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        /*LinearLayoutManager.setStackFrontEnd(true);*/
+        linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
