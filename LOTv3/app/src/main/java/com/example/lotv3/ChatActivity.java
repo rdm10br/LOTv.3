@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lotv3.util.Mensagem;
+import com.example.lotv3.util.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -58,6 +59,32 @@ public class ChatActivity extends AppCompatActivity
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         /*LinearLayoutManager.setStackFrontEnd(true);*/
         recyclerView.setLayoutManager(linearLayoutManager);
+
+
+        reference = FirebaseDatabase.getInstance().getReference("Usuarios");
+
+        reference.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                Usuario nome = dataSnapshot.getValue(Usuario.class);
+                nome.setText(nome.getNome());
+                /*if (user.getImageURL().equals("default")){
+                    profile_image.setImageResource(R.mipmap.ic_launcher);
+                } else {
+                    //and this
+                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
+                }*/
+
+                readMessage();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void readMessage(){
