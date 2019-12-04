@@ -72,8 +72,10 @@ public class ChatActivity extends AppCompatActivity
                     Mensagem mensagem = snapshot.getValue(Mensagem.class);
                     if (mensagem.getUsuario().equals(Uid)&& mensagem.getSender().equals(Userid)
                             ||mensagem.getUsuario().equals(Userid)&& mensagem.getSender().equals(Uid)){
-
+                        mChat.add(mensagem);
                     }
+                    chatAdapter = new ChatAdapter(ChatActivity.this,mChat);
+                    recyclerView.setAdapter(chatAdapter);
                 }
             }
 
