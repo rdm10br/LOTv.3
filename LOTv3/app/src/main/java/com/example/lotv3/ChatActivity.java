@@ -37,9 +37,10 @@ public class ChatActivity extends AppCompatActivity
             Mensagem msg= new Mensagem(Uid,Msg);
             DB.collection("Mensagens").document(Userid.getUid()).set(msg);
             msgEdt.setText("",TextView.BufferType.EDITABLE);
+            alert("teste 2");
             }
         alert("teste 1");
-        alert("teste 2");
+
     }
 
 
