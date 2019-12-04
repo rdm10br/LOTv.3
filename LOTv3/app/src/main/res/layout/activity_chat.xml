@@ -19,20 +19,20 @@
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/chatCV"
-            android:layout_width="@dimen/standard_height"
-            android:layout_height="@dimen/standard_height"
-            app:cardCornerRadius="@dimen/grid_6">
-            <ImageView
+            android:layout_width="@dimen/grid_0"
+            android:layout_height="@dimen/grid_0"
+            app:cardCornerRadius="@dimen/grid_0">
+            <!--<ImageView
                 android:id="@+id/topPicIV"
                 android:layout_width="@dimen/standard_height"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginRight="@dimen/grid_1"
                 android:layout_marginLeft="@dimen/grid_1"
                 android:scaleType="center">
-            </ImageView>
+            </ImageView>-->
         </androidx.cardview.widget.CardView>
 
-        <TextView
+       <!-- <TextView
             android:id="@+id/topNameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             style="@style/text"
             android:paddingLeft="@dimen/grid_1"
             android:paddingRight="@dimen/grid_1"
-            />
+            />-->
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
