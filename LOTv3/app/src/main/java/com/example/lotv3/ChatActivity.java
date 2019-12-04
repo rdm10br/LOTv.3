@@ -66,33 +66,23 @@ public class ChatActivity extends AppCompatActivity
         reference= FirebaseDatabase.getInstance().getReference("Mensagens");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mChat.clear();
                 for (DataSnapshot snapshot :dataSnapshot.getChildren()){
                     Mensagem mensagem = snapshot.getValue(Mensagem.class);
                     if (mensagem.getUsuario().equals(Uid)&& mensagem.getSender().equals(Userid)
                             ||mensagem.getUsuario().equals(Userid)&& mensagem.getSender().equals(Uid)){
-                        mChat
-                    }
-
-                    public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                        if (e !=null){
-                            alert("falha");
-                            return;
-                        }
-                        if (documentSnapshot !=null && documentSnapshot.exists()){
-                            mChat.clear();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
-                })
+                }
             }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     public void onSend(View view)
     {
