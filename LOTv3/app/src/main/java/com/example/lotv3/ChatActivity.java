@@ -30,6 +30,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.lang.ref.Reference;
@@ -68,8 +69,8 @@ public class ChatActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                Usuario nome = dataSnapshot.getValue(Usuario.class);
-                nome.setText(nome.getNome());
+                /*Usuario nome = dataSnapshot.getValue(Usuario.class);
+                nome.setText(nome.getNome());*/
                 /*if (user.getImageURL().equals("default")){
                     profile_image.setImageResource(R.mipmap.ic_launcher);
                 } else {
@@ -119,7 +120,7 @@ public class ChatActivity extends AppCompatActivity
         String Msg= msgEdt.getText().toString();
         if(!TextUtils.isEmpty(Msg)){
             Mensagem msg= new Mensagem(Uid,Msg);
-            DB.collection("Mensagens").document(Userid.getUid()).set(msg);
+            reference.child("Mensagens").child(Uid).setValue(msg);
             msgEdt.setText("",TextView.BufferType.EDITABLE);
             alert("teste 2");
             }
