@@ -32,7 +32,7 @@ public class ChatActivity extends AppCompatActivity
     public void onSend(View view)
     {
         TextView msgEdt = findViewById(R.id.messageET);
-        String Msg= msgEdt.toString();
+        String Msg= msgEdt.getText().toString();
         if(!TextUtils.isEmpty(Msg)){
             Mensagem msg= new Mensagem(Uid,Msg);
             DB.collection("Mensagens").document(Userid.getUid()).set(msg);
